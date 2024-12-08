@@ -4,12 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const nunjucks = require('nunjucks');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var naverRouter = require('./routes/naver');
 // var usersRouter = require('./routes/users');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
